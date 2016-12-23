@@ -33,6 +33,29 @@
       "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_c9693d27",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-23T16:16:56Z",
+      "side": 1,
+      "message": "We have git as BR in the python2 subpackage, no need to add it here.",
+      "range": {
+        "startLine": 135,
+        "startChar": 16,
+        "endLine": 135,
+        "endChar": 19
+      },
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
