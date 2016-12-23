@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_891105af",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2016-12-23T15:04:50Z",
+      "side": 1,
+      "message": "Some of the requirements have been bumped in requirements.txt, could you update Requires with current status?",
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_2912b9b4",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2016-12-23T15:04:50Z",
+      "side": 1,
+      "message": "stevedore was added recently in https://github.com/openstack/python-tackerclient/commit/6944ea040596a3116a01b76e6bd7a842d2a6ca5f . Could you include it?",
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
