@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fab399f4_299559e4",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2016-12-24T03:06:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fab399f4_891105af",
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab399f4_2912b9b4",
         "filename": "python-tackerclient.spec",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fab399f4_499a8d15",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2016-12-24T03:06:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fab399f4_2912b9b4",
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab399f4_c9693d27",
         "filename": "python-tackerclient.spec",
         "patchSetId": 3
@@ -47,6 +83,30 @@
       "writtenOn": "2016-12-23T16:16:56Z",
       "side": 1,
       "message": "We have git as BR in the python2 subpackage, no need to add it here.",
+      "range": {
+        "startLine": 135,
+        "startChar": 16,
+        "endLine": 135,
+        "endChar": 19
+      },
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_699f5104",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2016-12-24T03:06:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fab399f4_c9693d27",
       "range": {
         "startLine": 135,
         "startChar": 16,
