@@ -116,6 +116,30 @@
       "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_7c81d549",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-01-05T14:54:18Z",
+      "side": 1,
+      "message": "Actually, BRs are global, since there is only one buildroot and having them distributed under subpackages is confusing, IMHO they should be all moved to the toplevel and maybe sub-grouped there - but that\u0027s a separate discussion.",
+      "parentUuid": "fab399f4_699f5104",
+      "range": {
+        "startLine": 135,
+        "startChar": 16,
+        "endLine": 135,
+        "endChar": 19
+      },
+      "revId": "d2f12f52d92b77b50503546d4a3f5b4fdefcd19a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
