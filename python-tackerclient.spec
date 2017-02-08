@@ -12,8 +12,8 @@
 %global executable tacker
 
 Name:       %{client}
-Version:    XXX
-Release:    XXX
+Version:    0.9.0
+Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
 URL:        http://launchpad.net/%{client}/
@@ -265,6 +265,9 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 0.9.0-1
+- Update to 0.9.0
+
 * Thu Dec 22 2016 Dan Radez <dradez@redhat.com> - 0.7.0-2
 - Copied from koji to RDO
 
