@@ -1,5 +1,9 @@
-# UUID                                  	Group Name
-#
-263bbba39e8ad4b9021aa07d92a74421224cbced	openstack/tackerclient-distgit-core
-ac884816e72f416218c2b23397ba4318c97e4fa3	openstack/tackerclient-distgit-ptl
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+global:Anonymous-Users	Anonymous Users
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
+89a0718ba9bd9f461602c6dd210ecf79ea0ab07b	openstack/tackerclient-ptl
+825bf939b7ad1a2c1a4352b82015a3443cc25c33	openstack/tackerclient-core
