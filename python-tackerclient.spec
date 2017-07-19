@@ -274,3 +274,4 @@ rm -rf .testrepository
 
 * Wed Jul 6 2016 Alfredo Moralejo <amoralej@redhat.com> - 0.4.0-1
 - initial package
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tackerclient/commit/?id=95ddcbe9660e990b8fae0f3b492e251c9c87bd52
