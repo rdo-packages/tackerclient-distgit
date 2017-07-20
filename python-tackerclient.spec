@@ -101,7 +101,9 @@ This package contains the tacker client test files.
 Summary:    OpenStack tacker client documentation
 
 BuildRequires: python-sphinx
+# FIXME: remove following line when a new release including https://review.openstack.org/#/c/481345/ is in u-c
 BuildRequires: python-oslo-sphinx
+BuildRequires: python-openstackdocstheme
 
 %description -n python-%{sclient}-doc
 OpenStack tacker client documentation
@@ -203,11 +205,11 @@ rm -f *requirements.txt
 %endif
 
 # generate html docs
-sphinx-build -b html doc/source html
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
-sphinx-build -b man doc/source man
+%{__python2} setup.py build_sphinx -b man
 
 %install
 
@@ -218,7 +220,7 @@ ln -s ./%{executable}-%{python3_version} %{buildroot}%{_bindir}/%{executable}-3
 %endif
 
 %py2_install
-install -p -D -m 644 -v man/python-tackerclient.1 %{buildroot}%{_mandir}/man1/python-tackerclient.1
+install -p -D -m 644 -v doc/build/man/python-tackerclient.1 %{buildroot}%{_mandir}/man1/python-tackerclient.1
 mv %{buildroot}%{_bindir}/%{executable} %{buildroot}%{_bindir}/%{executable}-%{python2_version}
 ln -s ./%{executable}-%{python2_version} %{buildroot}%{_bindir}/%{executable}-2
 ln -s ./%{executable}-2 %{buildroot}%{_bindir}/%{executable}
@@ -246,7 +248,7 @@ rm -rf .testrepository
 
 %files -n python-%{sclient}-doc
 %license LICENSE
-%doc html README.rst
+%doc doc/build/html README.rst
 
 %if 0%{?with_python3}
 %files -n python3-%{sclient}
