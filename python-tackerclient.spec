@@ -48,21 +48,21 @@ BuildRequires:  python-testrepository
 BuildRequires:  python-testtools
 BuildRequires:  git
 
-Requires:   python-pbr >= 1.8
+Requires:   python-pbr >= 2.0.0
 Requires:   python-babel >= 2.3.4
-Requires:   python-cliff >= 2.3.0
+Requires:   python-cliff >= 2.8.0
 Requires:   python-iso8601 >= 0.1.11
 Requires:   python-keystoneclient >= 1:3.8.0
 Requires:   python-netaddr >= 0.7.13
 Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.11.0
+Requires:   python-oslo-log >= 3.22.0
 Requires:   python-oslo-serialization >= 1.10.0
 Requires:   python-oslo-sphinx >= 4.7.0
-Requires:   python-oslo-utils >= 3.18.0
-Requires:   python-requests >= 2.10.0
+Requires:   python-oslo-utils >= 3.20.0
+Requires:   python-requests >= 2.14.2
 Requires:   python-simplejson >= 2.2.0
 Requires:   python-six >= 1.9.0
-Requires:   python-stevedore >= 1.17.1
+Requires:   python-stevedore >= 1.20.0
 
 %description -n python2-%{sclient}
 OpenStack tacker client
@@ -137,21 +137,21 @@ BuildRequires:  python3-testtools
 BuildRequires:  python3-mock
 
 
-Requires:   python3-pbr >= 1.8
+Requires:   python3-pbr >= 2.0.0
 Requires:   python3-babel >= 2.3.4
-Requires:   python3-cliff >= 2.3.0
+Requires:   python3-cliff >= 2.8.0
 Requires:   python3-iso8601 >= 0.1.11
 Requires:   python3-keystoneclient >= 1:3.8.0
 Requires:   python3-netaddr >= 0.7.13
 Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.11.0
+Requires:   python3-oslo-log >= 3.22.0
 Requires:   python3-oslo-serialization >= 1.10.0
 Requires:   python3-oslo-sphinx >= 4.7.0
-Requires:   python3-oslo-utils >= 3.18.0
-Requires:   python3-requests >= 2.10.0
+Requires:   python3-oslo-utils >= 3.20.0
+Requires:   python3-requests >= 2.14.2
 Requires:   python3-simplejson >= 2.2.0
 Requires:   python3-six >= 1.9.0
-Requires:   python3-stevedore >= 1.17.1
+Requires:   python3-stevedore >= 1.20.0
 
 %description -n python3-%{sclient}
 OpenStack tacker client
