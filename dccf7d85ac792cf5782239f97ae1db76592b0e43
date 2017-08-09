@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0ff97c4d",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-09T18:11:10Z",
+      "side": 1,
+      "message": "don\u0027t update requests yet,leave 2.10.0",
+      "range": {
+        "startLine": 62,
+        "startChar": 34,
+        "endLine": 62,
+        "endChar": 37
+      },
+      "revId": "dccf7d85ac792cf5782239f97ae1db76592b0e43",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
