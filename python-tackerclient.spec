@@ -30,7 +30,6 @@ BuildRequires:  pyflakes
 BuildRequires:  python2-devel
 BuildRequires:  python2-mock
 BuildRequires:  python-cliff
-BuildRequires:  python-coverage
 BuildRequires:  python-fixtures
 BuildRequires:  python-flake8
 BuildRequires:  python-hacking
@@ -73,7 +72,6 @@ Summary:    OpenStack taker client unit tests
 Requires:   python2-%{sclient} = %{version}-%{release}
 
 Requires:  pyflakes
-Requires:  python-coverage
 Requires:  python-fixtures
 Requires:  python-flake8
 Requires:  python-hacking
@@ -118,7 +116,6 @@ Summary:    OpenStack tacker client
 BuildRequires:  python3-pyflakes
 BuildRequires:  python3-devel
 BuildRequires:  python3-cliff
-BuildRequires:  python3-coverage
 BuildRequires:  python3-fixtures
 BuildRequires:  python3-flake8
 BuildRequires:  python3-hacking
@@ -162,7 +159,6 @@ Summary:    OpenStack tacker client unit tests
 Requires:   python3-%{sclient} = %{version}-%{release}
 
 Requires:  python3-pyflakes
-Requires:  python3-coverage
 Requires:  python3-fixtures
 Requires:  python3-flake8
 Requires:  python3-hacking
