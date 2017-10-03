@@ -261,14 +261,3 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
-* Thu Dec 22 2016 Dan Radez <dradez@redhat.com> - 0.7.0-2
-- Copied from koji to RDO
-
-* Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 0.7.0-2
-- Rebuild for Python 3.6
-
-* Tue Sep 13 2016 Alfredo Moralejo <amoralej@redhat.com> - 0.7.0-1
-- update to version 0.7.0
-
-* Wed Jul 6 2016 Alfredo Moralejo <amoralej@redhat.com> - 0.4.0-1
-- initial package
