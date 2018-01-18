@@ -12,7 +12,7 @@
 %global executable tacker
 
 Name:       %{client}
-Version:    0.10.0
+Version:    0.10.1
 Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
@@ -265,6 +265,9 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+* Thu Jan 18 2018 RDO <dev@lists.rdoproject.org> 0.10.1-1
+- Update to 0.10.1
+
 * Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 0.10.0-1
 - Update to 0.10.0
 
