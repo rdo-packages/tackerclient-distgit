@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_97a04f92",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2018-02-07T17:40:14Z",
+      "side": 1,
+      "message": "cliff is openstack\ntestrepository is ok\n\npyflakes, pep8, mox are old (2015 at best) \u003d\u003e candidates for rebuild",
+      "revId": "479d655ad2d5c54ebfae5c2364474478ea061405",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
