@@ -26,42 +26,57 @@ BuildArch:  noarch
 Summary:    OpenStack tacker client
 %{?python_provide:%python_provide python2-%{sclient}}
 
-BuildRequires:  pyflakes
 BuildRequires:  python2-devel
 BuildRequires:  python2-mock
-BuildRequires:  python-cliff
-BuildRequires:  python-fixtures
-BuildRequires:  python-flake8
-BuildRequires:  python-hacking
-BuildRequires:  python-keystoneclient
-BuildRequires:  python-mox
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-serialization
-BuildRequires:  python-pbr
-BuildRequires:  python-pep8
-BuildRequires:  python-reno
-BuildRequires:  python-setuptools
-BuildRequires:  python-sphinx
-BuildRequires:  python-subunit
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
+BuildRequires:  python2-fixtures
+BuildRequires:  python2-flake8
+BuildRequires:  python2-hacking
+BuildRequires:  python2-keystoneclient
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-oslo-serialization
+BuildRequires:  python2-pbr
+BuildRequires:  python2-reno
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-subunit
+BuildRequires:  python2-testtools
 BuildRequires:  git
+%if 0%{?fedora} > 0
+BuildRequires:  python2-cliff
+BuildRequires:  python2-pyflakes
+BuildRequires:  python2-mox
+BuildRequires:  python2-pep8
+BuildRequires:  python2-testrepository
+%else
+BuildRequires:  pyflakes
+BuildRequires:  python-cliff
+BuildRequires:  python-mox
+BuildRequires:  python-pep8
+BuildRequires:  python-testrepository
+%endif
 
-Requires:   python-pbr >= 2.0.0
-Requires:   python-babel >= 2.3.4
+Requires:   python2-pbr >= 2.0.0
+Requires:   python2-babel >= 2.3.4
+Requires:   python2-iso8601 >= 0.1.11
+Requires:   python2-keystoneclient >= 1:3.8.0
+Requires:   python2-oslo-i18n >= 3.15.3
+Requires:   python2-oslo-log >= 3.36.0
+Requires:   python2-oslo-serialization >= 2.18.0
+Requires:   python2-oslo-sphinx >= 4.7.0
+Requires:   python2-oslo-utils >= 3.33.0
+Requires:   python2-requests >= 2.14.2
+Requires:   python2-six >= 1.10.0
+Requires:   python2-stevedore >= 1.20.0
+Requires:   python2-osc-lib >= 1.8.0
+%if 0%{?fedora} > 0
+Requires:   python2-cliff >= 2.8.0
+Requires:   python2-netaddr >= 0.7.18
+Requires:   python2-simplejson >= 3.5.1
+%else
 Requires:   python-cliff >= 2.8.0
-Requires:   python-iso8601 >= 0.1.11
-Requires:   python-keystoneclient >= 1:3.8.0
-Requires:   python-netaddr >= 0.7.13
-Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.22.0
-Requires:   python-oslo-serialization >= 1.10.0
-Requires:   python-oslo-sphinx >= 4.7.0
-Requires:   python-oslo-utils >= 3.20.0
-Requires:   python-requests >= 2.10.0
-Requires:   python-simplejson >= 2.2.0
-Requires:   python-six >= 1.9.0
-Requires:   python-stevedore >= 1.20.0
+Requires:   python-netaddr >= 0.7.18
+Requires:   python-simplejson >= 3.5.1
+%endif
 
 %description -n python2-%{sclient}
 OpenStack tacker client
@@ -71,22 +86,29 @@ OpenStack tacker client
 Summary:    OpenStack taker client unit tests
 Requires:   python2-%{sclient} = %{version}-%{release}
 
-Requires:  pyflakes
-Requires:  python-fixtures
-Requires:  python-flake8
-Requires:  python-hacking
-Requires:  python-mox
-Requires:  python-oslo-log
-Requires:  python-oslo-serialization
-Requires:  python-pbr
-Requires:  python-pep8
-Requires:  python-reno
-Requires:  python-setuptools
-Requires:  python-sphinx
-Requires:  python-subunit
-Requires:  python-testrepository
-Requires:  python-testtools
+Requires:  python2-fixtures
+Requires:  python2-flake8
+Requires:  python2-hacking
+Requires:  python2-oslo-log
+Requires:  python2-oslo-serialization
+Requires:  python2-pbr
+Requires:  python2-reno
+Requires:  python2-setuptools
+Requires:  python2-sphinx
+Requires:  python2-subunit
+Requires:  python2-testtools
 Requires:  python2-mock
+%if 0%{?fedora} > 0
+Requires:  python2-pyflakes
+Requires:  python2-mox
+Requires:  python2-pep8
+Requires:  python2-testrepository
+%else
+Requires:  pyflakes
+Requires:  python-mox
+Requires:  python-pep8
+Requires:  python-testrepository
+%endif
 
 
 %description -n python2-%{sclient}-tests-unit
@@ -98,10 +120,10 @@ This package contains the tacker client test files.
 %package -n python-%{sclient}-doc
 Summary:    OpenStack tacker client documentation
 
-BuildRequires: python-sphinx
+BuildRequires: python2-sphinx
 # FIXME: remove following line when a new release including https://review.openstack.org/#/c/481345/ is in u-c
-BuildRequires: python-oslo-sphinx
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-oslo-sphinx
+BuildRequires: python2-openstackdocstheme
 
 %description -n python-%{sclient}-doc
 OpenStack tacker client documentation
@@ -139,16 +161,17 @@ Requires:   python3-babel >= 2.3.4
 Requires:   python3-cliff >= 2.8.0
 Requires:   python3-iso8601 >= 0.1.11
 Requires:   python3-keystoneclient >= 1:3.8.0
-Requires:   python3-netaddr >= 0.7.13
-Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.22.0
-Requires:   python3-oslo-serialization >= 1.10.0
+Requires:   python3-netaddr >= 0.7.18
+Requires:   python3-oslo-i18n >= 3.15.3
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-sphinx >= 4.7.0
-Requires:   python3-oslo-utils >= 3.20.0
-Requires:   python3-requests >= 2.10.0
-Requires:   python3-simplejson >= 2.2.0
-Requires:   python3-six >= 1.9.0
+Requires:   python3-oslo-utils >= 3.33.0
+Requires:   python3-requests >= 2.14.2
+Requires:   python3-simplejson >= 3.5.1
+Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
+Requires:   python3-osc-lib >= 1.8.0
 
 %description -n python3-%{sclient}
 OpenStack tacker client
