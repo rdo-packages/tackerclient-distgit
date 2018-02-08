@@ -16,6 +16,24 @@
       "revId": "479d655ad2d5c54ebfae5c2364474478ea061405",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_de9f25b3",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-08T11:12:41Z",
+      "side": 1,
+      "message": "The problem with cliff is that python2-cliff still not in promoted repo so there is a chance that jobs which rebuild packages in upstream gates using current-tripleo symlink fail to build packages depending on python2-cliff until next promotion.",
+      "parentUuid": "9aa53dc9_97a04f92",
+      "revId": "479d655ad2d5c54ebfae5c2364474478ea061405",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
