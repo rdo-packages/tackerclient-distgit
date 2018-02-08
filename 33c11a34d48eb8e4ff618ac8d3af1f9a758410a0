@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_3ebe0900",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-08T12:50:04Z",
+      "side": 1,
+      "message": "we have now python2-mox in deps repo.",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 27
+      },
+      "revId": "33c11a34d48eb8e4ff618ac8d3af1f9a758410a0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
