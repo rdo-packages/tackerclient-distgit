@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aaa499b_9ea99de2",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-02-08T11:19:18Z",
+      "side": 1,
+      "message": "Do we really need pep8 and pyflakes, it was retired from test-requirements.txt and setup.py tests normally doesn\u0027t run syntax tests, only unit ones. Could we try to remove those requirements?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "revId": "479d655ad2d5c54ebfae5c2364474478ea061405",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_97a04f92",
         "filename": "python-tackerclient.spec",
         "patchSetId": 2
