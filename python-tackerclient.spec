@@ -12,8 +12,8 @@
 %global executable tacker
 
 Name:       %{client}
-Version:    XXX
-Release:    XXX
+Version:    0.11.0
+Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
 URL:        http://launchpad.net/%{client}/
@@ -260,3 +260,6 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+* Sun Feb 11 2018 RDO <dev@lists.rdoproject.org> 0.11.0-1
+- Update to 0.11.0
+
