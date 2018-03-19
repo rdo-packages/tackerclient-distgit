@@ -215,7 +215,7 @@ ln -s ./%{executable}-%{python3_version} %{buildroot}%{_bindir}/%{executable}-3
 %endif
 
 %py2_install
-install -p -D -m 644 -v doc/build/man/python-tackerclient.1 %{buildroot}%{_mandir}/man1/python-tackerclient.1
+install -p -D -m 644 -v doc/build/man/tacker.1 %{buildroot}%{_mandir}/man1/tacker.1
 mv %{buildroot}%{_bindir}/%{executable} %{buildroot}%{_bindir}/%{executable}-%{python2_version}
 ln -s ./%{executable}-%{python2_version} %{buildroot}%{_bindir}/%{executable}-2
 ln -s ./%{executable}-2 %{buildroot}%{_bindir}/%{executable}
