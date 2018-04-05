@@ -39,7 +39,6 @@ BuildRequires:  python2-oslo-serialization
 BuildRequires:  python2-pbr
 BuildRequires:  python2-reno
 BuildRequires:  python2-setuptools
-BuildRequires:  python2-sphinx
 BuildRequires:  python2-subunit
 BuildRequires:  python2-testrepository
 BuildRequires:  python2-testtools
@@ -54,7 +53,6 @@ Requires:   python2-keystoneclient >= 1:3.8.0
 Requires:   python2-oslo-i18n >= 3.15.3
 Requires:   python2-oslo-log >= 3.36.0
 Requires:   python2-oslo-serialization >= 2.18.0
-Requires:   python2-oslo-sphinx >= 4.7.0
 Requires:   python2-oslo-utils >= 3.33.0
 Requires:   python2-requests >= 2.14.2
 Requires:   python2-six >= 1.10.0
@@ -83,7 +81,6 @@ Requires:  python2-oslo-serialization
 Requires:  python2-pbr
 Requires:  python2-reno
 Requires:  python2-setuptools
-Requires:  python2-sphinx
 Requires:  python2-subunit
 Requires:  python2-testtools
 Requires:  python2-mock
@@ -101,8 +98,6 @@ This package contains the tacker client test files.
 Summary:    OpenStack tacker client documentation
 
 BuildRequires: python2-sphinx
-# FIXME: remove following line when a new release including https://review.openstack.org/#/c/481345/ is in u-c
-BuildRequires: python2-oslo-sphinx
 BuildRequires: python2-openstackdocstheme
 
 %description -n python-%{sclient}-doc
@@ -127,7 +122,6 @@ BuildRequires:  python3-oslo-serialization
 BuildRequires:  python3-pbr
 BuildRequires:  python3-reno
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-sphinx
 BuildRequires:  python3-subunit
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testtools
@@ -143,7 +137,6 @@ Requires:   python3-netaddr >= 0.7.18
 Requires:   python3-oslo-i18n >= 3.15.3
 Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-serialization >= 2.18.0
-Requires:   python3-oslo-sphinx >= 4.7.0
 Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-requests >= 2.14.2
 Requires:   python3-simplejson >= 3.5.1
@@ -168,7 +161,6 @@ Requires:  python3-oslo-serialization
 Requires:  python3-pbr
 Requires:  python3-reno
 Requires:  python3-setuptools
-Requires:  python3-sphinx
 Requires:  python3-subunit
 Requires:  python3-testrepository
 Requires:  python3-testtools
