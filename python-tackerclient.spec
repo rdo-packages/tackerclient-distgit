@@ -79,7 +79,6 @@ Requires:  python2-hacking
 Requires:  python2-oslo-log
 Requires:  python2-oslo-serialization
 Requires:  python2-pbr
-Requires:  python2-reno
 Requires:  python2-setuptools
 Requires:  python2-subunit
 Requires:  python2-testtools
@@ -159,7 +158,6 @@ Requires:  python3-mox3
 Requires:  python3-oslo-log
 Requires:  python3-oslo-serialization
 Requires:  python3-pbr
-Requires:  python3-reno
 Requires:  python3-setuptools
 Requires:  python3-subunit
 Requires:  python3-testrepository
