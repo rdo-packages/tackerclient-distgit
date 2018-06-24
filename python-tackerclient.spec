@@ -250,3 +250,4 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tackerclient/commit/?id=2156f7924d419d0fcf1249ce04ba54c6f113789c
