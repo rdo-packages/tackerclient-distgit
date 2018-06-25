@@ -39,8 +39,8 @@ BuildRequires:  python2-oslo-serialization
 BuildRequires:  python2-pbr
 BuildRequires:  python2-reno
 BuildRequires:  python2-setuptools
+BuildRequires:  python2-stestr
 BuildRequires:  python2-subunit
-BuildRequires:  python2-testrepository
 BuildRequires:  python2-testtools
 BuildRequires:  python2-cliff
 BuildRequires:  python2-mox
@@ -83,7 +83,7 @@ Requires:  python2-setuptools
 Requires:  python2-subunit
 Requires:  python2-testtools
 Requires:  python2-mock
-Requires:  python2-testrepository
+Requires:  python2-stestr
 Requires:  python2-mox
 
 
@@ -121,8 +121,8 @@ BuildRequires:  python3-oslo-serialization
 BuildRequires:  python3-pbr
 BuildRequires:  python3-reno
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-stestr
 BuildRequires:  python3-subunit
-BuildRequires:  python3-testrepository
 BuildRequires:  python3-testtools
 BuildRequires:  python3-mock
 
@@ -159,8 +159,8 @@ Requires:  python3-oslo-log
 Requires:  python3-oslo-serialization
 Requires:  python3-pbr
 Requires:  python3-setuptools
+Requires:  python3-stestr
 Requires:  python3-subunit
-Requires:  python3-testrepository
 Requires:  python3-testtools
 Requires:  python3-mock
 
@@ -190,11 +190,11 @@ rm -f *requirements.txt
 %endif
 
 # generate html docs
-%{__python2} setup.py build_sphinx -b html
+sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
-%{__python2} setup.py build_sphinx -b man
+sphinx-build -W -b man doc/source doc/build/man
 
 %install
 
@@ -211,11 +211,11 @@ ln -s ./%{executable}-%{python2_version} %{buildroot}%{_bindir}/%{executable}-2
 ln -s ./%{executable}-2 %{buildroot}%{_bindir}/%{executable}
 
 %check
+export OS_TEST_PATH='./tackerclient/tests/unit'
 %if 0%{?with_python3}
-%{__python3} setup.py test
-rm -rf .testrepository
+stestr-3 --test-path $OS_TEST_PATH run
 %endif
-%{__python2} setup.py test
+stestr --test-path $OS_TEST_PATH run
 
 %files -n python2-%{sclient}
 %license LICENSE
