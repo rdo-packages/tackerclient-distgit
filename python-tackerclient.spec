@@ -1,3 +1,15 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 # Python3 support in OpenStack starts with version 3.5,
@@ -24,158 +36,90 @@ BuildArch:  noarch
 
 BuildRequires:  git
 
-%package -n python2-%{sclient}
+%package -n python%{pyver}-%{sclient}
 Summary:    OpenStack tacker client
 %{?python_provide:%python_provide python2-%{sclient}}
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-mock
-BuildRequires:  python2-fixtures
-BuildRequires:  python2-flake8
-BuildRequires:  python2-hacking
-BuildRequires:  python2-keystoneclient
-BuildRequires:  python2-oslo-log
-BuildRequires:  python2-oslo-serialization
-BuildRequires:  python2-pbr
-BuildRequires:  python2-reno
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-stestr
-BuildRequires:  python2-subunit
-BuildRequires:  python2-testtools
-BuildRequires:  python2-cliff
-BuildRequires:  python2-mox
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-fixtures
+BuildRequires:  python%{pyver}-flake8
+BuildRequires:  python%{pyver}-hacking
+BuildRequires:  python%{pyver}-keystoneclient
+BuildRequires:  python%{pyver}-oslo-log
+BuildRequires:  python%{pyver}-oslo-serialization
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-reno
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-stestr
+BuildRequires:  python%{pyver}-subunit
+BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-cliff
+BuildRequires:  python%{pyver}-mox
 
-Requires:   python2-pbr >= 2.0.0
-Requires:   python2-babel >= 2.3.4
-Requires:   python2-cliff >= 2.8.0
-Requires:   python2-iso8601 >= 0.1.11
-Requires:   python2-keystoneclient >= 1:3.8.0
-Requires:   python2-oslo-i18n >= 3.15.3
-Requires:   python2-oslo-log >= 3.36.0
-Requires:   python2-oslo-serialization >= 2.18.0
-Requires:   python2-oslo-utils >= 3.33.0
-Requires:   python2-requests >= 2.14.2
-Requires:   python2-six >= 1.10.0
-Requires:   python2-stevedore >= 1.20.0
-Requires:   python2-osc-lib >= 1.8.0
-Requires:   python2-netaddr >= 0.7.18
-%if 0%{?fedora} > 0
-Requires:   python2-simplejson >= 3.5.1
-%else
+Requires:   python%{pyver}-pbr >= 2.0.0
+Requires:   python%{pyver}-babel >= 2.3.4
+Requires:   python%{pyver}-cliff >= 2.8.0
+Requires:   python%{pyver}-iso8601 >= 0.1.11
+Requires:   python%{pyver}-keystoneclient >= 1:3.8.0
+Requires:   python%{pyver}-oslo-i18n >= 3.15.3
+Requires:   python%{pyver}-oslo-log >= 3.36.0
+Requires:   python%{pyver}-oslo-serialization >= 2.18.0
+Requires:   python%{pyver}-oslo-utils >= 3.33.0
+Requires:   python%{pyver}-requests >= 2.14.2
+Requires:   python%{pyver}-six >= 1.10.0
+Requires:   python%{pyver}-stevedore >= 1.20.0
+Requires:   python%{pyver}-osc-lib >= 1.8.0
+Requires:   python%{pyver}-netaddr >= 0.7.18
+# Handle python2 exception
+%if %{pyver} == 2
 Requires:   python-simplejson >= 3.5.1
+%else
+Requires:   python%{pyver}-simplejson >= 3.5.1
 %endif
 
-%description -n python2-%{sclient}
+%description -n python%{pyver}-%{sclient}
 OpenStack tacker client
 
 
-%package -n python2-%{sclient}-tests-unit
+%package -n python%{pyver}-%{sclient}-tests-unit
 Summary:    OpenStack taker client unit tests
-Requires:   python2-%{sclient} = %{version}-%{release}
+Requires:   python%{pyver}-%{sclient} = %{version}-%{release}
 
-Requires:  python2-fixtures
-Requires:  python2-flake8
-Requires:  python2-hacking
-Requires:  python2-oslo-log
-Requires:  python2-oslo-serialization
-Requires:  python2-pbr
-Requires:  python2-setuptools
-Requires:  python2-subunit
-Requires:  python2-testtools
-Requires:  python2-mock
-Requires:  python2-stestr
-Requires:  python2-mox
+Requires:  python%{pyver}-fixtures
+Requires:  python%{pyver}-flake8
+Requires:  python%{pyver}-hacking
+Requires:  python%{pyver}-oslo-log
+Requires:  python%{pyver}-oslo-serialization
+Requires:  python%{pyver}-pbr
+Requires:  python%{pyver}-setuptools
+Requires:  python%{pyver}-subunit
+Requires:  python%{pyver}-testtools
+Requires:  python%{pyver}-mock
+Requires:  python%{pyver}-stestr
+Requires:  python%{pyver}-mox
 
 
-%description -n python2-%{sclient}-tests-unit
+%description -n python%{pyver}-%{sclient}-tests-unit
 OpenStack tacker client unit tests
 
 This package contains the tacker client test files.
 
 
-%package -n python-%{sclient}-doc
+%package -n python%{pyver}-%{sclient}-doc
 Summary:    OpenStack tacker client documentation
+%{?python_provide:%python_provide python%{pyver}-%{sclient}-doc}
 
-BuildRequires: python2-sphinx
-BuildRequires: python2-openstackdocstheme
+BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-openstackdocstheme
 
-%description -n python-%{sclient}-doc
+%description -n python%{pyver}-%{sclient}-doc
 OpenStack tacker client documentation
 
 This package contains the documentation for tacker client.
 
-%if 0%{?with_python3}
-%package -n python3-%{sclient}
-Summary:    OpenStack tacker client
-%{?python_provide:%python_provide python3-%{sclient}}
-
-BuildRequires:  python3-devel
-BuildRequires:  python3-cliff
-BuildRequires:  python3-fixtures
-BuildRequires:  python3-flake8
-BuildRequires:  python3-hacking
-BuildRequires:  python3-keystoneclient
-BuildRequires:  python3-mox3
-BuildRequires:  python3-oslo-log
-BuildRequires:  python3-oslo-serialization
-BuildRequires:  python3-pbr
-BuildRequires:  python3-reno
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-stestr
-BuildRequires:  python3-subunit
-BuildRequires:  python3-testtools
-BuildRequires:  python3-mock
-
-
-Requires:   python3-pbr >= 2.0.0
-Requires:   python3-babel >= 2.3.4
-Requires:   python3-cliff >= 2.8.0
-Requires:   python3-iso8601 >= 0.1.11
-Requires:   python3-keystoneclient >= 1:3.8.0
-Requires:   python3-netaddr >= 0.7.18
-Requires:   python3-oslo-i18n >= 3.15.3
-Requires:   python3-oslo-log >= 3.36.0
-Requires:   python3-oslo-serialization >= 2.18.0
-Requires:   python3-oslo-utils >= 3.33.0
-Requires:   python3-requests >= 2.14.2
-Requires:   python3-simplejson >= 3.5.1
-Requires:   python3-six >= 1.10.0
-Requires:   python3-stevedore >= 1.20.0
-Requires:   python3-osc-lib >= 1.8.0
-
-%description -n python3-%{sclient}
-OpenStack tacker client
-
-
-%package -n python3-%{sclient}-tests-unit
-Summary:    OpenStack tacker client unit tests
-Requires:   python3-%{sclient} = %{version}-%{release}
-
-Requires:  python3-fixtures
-Requires:  python3-flake8
-Requires:  python3-hacking
-Requires:  python3-mox3
-Requires:  python3-oslo-log
-Requires:  python3-oslo-serialization
-Requires:  python3-pbr
-Requires:  python3-setuptools
-Requires:  python3-stestr
-Requires:  python3-subunit
-Requires:  python3-testtools
-Requires:  python3-mock
-
-
-%description -n python3-%{sclient}-tests-unit
-OpenStack tacker client unit tests
-
-This package contains the tacker client unit test files.
-
-%endif # with_python3
-
-
 %description
 OpenStack tacker client.
-
 
 %prep
 %autosetup -n %{client}-%{upstream_version} -S git
@@ -184,69 +128,43 @@ OpenStack tacker client.
 rm -f *requirements.txt
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif
+%{pyver_build}
 
 # generate html docs
-sphinx-build -W -b html doc/source doc/build/html
-# remove the sphinx-build leftovers
+sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
-sphinx-build -W -b man doc/source doc/build/man
+sphinx-build-%{pyver} -W -b man doc/source doc/build/man
 
 %install
 
-%if 0%{?with_python3}
-%py3_install
-mv %{buildroot}%{_bindir}/%{executable} %{buildroot}%{_bindir}/%{executable}-%{python3_version}
-ln -s ./%{executable}-%{python3_version} %{buildroot}%{_bindir}/%{executable}-3
-%endif
-
-%py2_install
+%{pyver_install}
 install -p -D -m 644 -v doc/build/man/tacker.1 %{buildroot}%{_mandir}/man1/tacker.1
-mv %{buildroot}%{_bindir}/%{executable} %{buildroot}%{_bindir}/%{executable}-%{python2_version}
-ln -s ./%{executable}-%{python2_version} %{buildroot}%{_bindir}/%{executable}-2
-ln -s ./%{executable}-2 %{buildroot}%{_bindir}/%{executable}
+
+# Create a versioned binary for backwards compatibility until everything is pure py3
+ln -s %{executable} %{buildroot}%{_bindir}/%{executable}-%{pyver}
 
 %check
 export OS_TEST_PATH='./tackerclient/tests/unit'
-%if 0%{?with_python3}
-stestr-3 --test-path $OS_TEST_PATH run
-%endif
-stestr --test-path $OS_TEST_PATH run
+stestr-%{pyver} --test-path $OS_TEST_PATH run
 
-%files -n python2-%{sclient}
+%files -n python%{pyver}-%{sclient}
 %license LICENSE
-%{python2_sitelib}/%{sclient}
-%{python2_sitelib}/*.egg-info
-%exclude %{python2_sitelib}/%{sclient}/tests
-%{_bindir}/%{executable}-%{python2_version}
-%{_bindir}/%{executable}-2
+%{pyver_sitelib}/%{sclient}
+%{pyver_sitelib}/*.egg-info
+%exclude %{pyver_sitelib}/%{sclient}/tests
+%{_bindir}/%{executable}-%{pyver}
 %{_bindir}/%{executable}
 %{_mandir}/man1/*
 
-%files -n python2-%{sclient}-tests-unit
+%files -n python%{pyver}-%{sclient}-tests-unit
 %license LICENSE
-%{python2_sitelib}/%{sclient}/tests
+%{pyver_sitelib}/%{sclient}/tests
 
-%files -n python-%{sclient}-doc
+%files -n python%{pyver}-%{sclient}-doc
 %license LICENSE
 %doc doc/build/html README.rst
 
-%if 0%{?with_python3}
-%files -n python3-%{sclient}
-%license LICENSE
-%{python3_sitelib}/%{sclient}
-%{python3_sitelib}/*.egg-info
-%exclude %{python3_sitelib}/%{sclient}/tests
-%{_bindir}/%{executable}-%{python3_version}
-%{_bindir}/%{executable}-3
-
-%files -n python3-%{sclient}-tests-unit
-%license LICENSE
-%{python3_sitelib}/%{sclient}/tests
-%endif # with_python3
-
 %changelog
+
