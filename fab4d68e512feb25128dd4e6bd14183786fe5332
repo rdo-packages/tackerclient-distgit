@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_66694e25",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-10-29T10:09:28Z",
+      "side": 1,
+      "message": "%{pyver}",
+      "range": {
+        "startLine": 34,
+        "startChar": 40,
+        "endLine": 34,
+        "endChar": 41
+      },
+      "revId": "fab4d68e512feb25128dd4e6bd14183786fe5332",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_26735617",
+        "filename": "python-tackerclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-10-29T10:09:28Z",
+      "side": 1,
+      "message": "doc package unversioned",
+      "range": {
+        "startLine": 99,
+        "startChar": 18,
+        "endLine": 99,
+        "endChar": 26
+      },
+      "revId": "fab4d68e512feb25128dd4e6bd14183786fe5332",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
