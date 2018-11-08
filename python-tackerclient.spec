@@ -32,6 +32,9 @@ BuildRequires:  git
 %package -n python%{pyver}-%{sclient}
 Summary:    OpenStack tacker client
 %{?python_provide:%python_provide python%{pyver}-%{sclient}}
+%if %{pyver} == 3
+Obsoletes: python2-%{sclient} < %{version}-%{release}
+%endif
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-mock
