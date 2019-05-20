@@ -139,7 +139,7 @@ ln -s %{executable} %{buildroot}%{_bindir}/%{executable}-%{pyver}
 
 %check
 export OS_TEST_PATH='./tackerclient/tests/unit'
-stestr-%{pyver} --test-path $OS_TEST_PATH run
+PYTHON=%{pyver_bin} stestr-%{pyver} --test-path $OS_TEST_PATH run
 
 %files -n python%{pyver}-%{sclient}
 %license LICENSE
