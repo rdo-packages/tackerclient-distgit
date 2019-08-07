@@ -15,6 +15,7 @@
 %global client python-tackerclient
 %global sclient tackerclient
 %global executable tacker
+%global with_doc 1
 
 Name:       %{client}
 Version:    XXX
@@ -99,6 +100,7 @@ OpenStack tacker client unit tests
 This package contains the tacker client test files.
 
 
+%if 0%{?with_doc}
 %package -n python-%{sclient}-doc
 Summary:    OpenStack tacker client documentation
 
@@ -109,6 +111,7 @@ BuildRequires: python%{pyver}-openstackdocstheme
 OpenStack tacker client documentation
 
 This package contains the documentation for tacker client.
+%endif
 
 %description
 OpenStack tacker client.
@@ -122,17 +125,22 @@ rm -f *requirements.txt
 %build
 %{pyver_build}
 
+%if 0%{?with_doc}
 # generate html docs
 sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
 sphinx-build-%{pyver} -W -b man doc/source doc/build/man
+%endif
 
 %install
 
 %{pyver_install}
+
+%if 0%{?with_doc}
 install -p -D -m 644 -v doc/build/man/tacker.1 %{buildroot}%{_mandir}/man1/tacker.1
+%endif
 
 # Create a versioned binary for backwards compatibility until everything is pure py3
 ln -s %{executable} %{buildroot}%{_bindir}/%{executable}-%{pyver}
@@ -148,15 +156,19 @@ PYTHON=%{pyver_bin} stestr-%{pyver} --test-path $OS_TEST_PATH run
 %exclude %{pyver_sitelib}/%{sclient}/tests
 %{_bindir}/%{executable}-%{pyver}
 %{_bindir}/%{executable}
+
+%if 0%{?with_doc}
 %{_mandir}/man1/*
+%endif
 
 %files -n python%{pyver}-%{sclient}-tests-unit
 %license LICENSE
 %{pyver_sitelib}/%{sclient}/tests
 
+%if 0%{?with_doc}
 %files -n python-%{sclient}-doc
 %license LICENSE
 %doc doc/build/html README.rst
+%endif
 
 %changelog
-
