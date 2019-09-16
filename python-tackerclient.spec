@@ -47,6 +47,7 @@ BuildRequires:  python%{pyver}-oslo-log
 BuildRequires:  python%{pyver}-oslo-serialization
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-reno
+BuildRequires:  python%{pyver}-requests-mock
 BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-stestr
 BuildRequires:  python%{pyver}-subunit
@@ -105,6 +106,8 @@ This package contains the tacker client test files.
 Summary:    OpenStack tacker client documentation
 
 BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-osc-lib
+BuildRequires: python%{pyver}-ddt
 BuildRequires: python%{pyver}-openstackdocstheme
 
 %description -n python-%{sclient}-doc
@@ -119,6 +122,9 @@ OpenStack tacker client.
 %prep
 %autosetup -n %{client}-%{upstream_version} -S git
 
+# Fix rpmlint warning for CRLF line termination
+sed -i 's/\r$//' ./doc/source/cli/vnf_package_commands.rst ./doc/source/cli/commands.rst
+
 # Let's handle dependencies ourseleves
 rm -f *requirements.txt
 
@@ -127,6 +133,7 @@ rm -f *requirements.txt
 
 %if 0%{?with_doc}
 # generate html docs
+export PYTHONPATH=.
 sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
