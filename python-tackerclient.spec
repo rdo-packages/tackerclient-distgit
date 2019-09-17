@@ -179,3 +179,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} --test-path $OS_TEST_PATH run
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-tackerclient/commit/?id=f4839f308ab341bbb4a8faa818b0d6eba2048819
