@@ -53,6 +53,8 @@ BuildRequires:  python%{pyver}-stestr
 BuildRequires:  python%{pyver}-subunit
 BuildRequires:  python%{pyver}-testtools
 BuildRequires:  python%{pyver}-cliff
+BuildRequires:  python%{pyver}-osc-lib
+BuildRequires:  python%{pyver}-ddt
 
 Requires:   python%{pyver}-pbr >= 2.0.0
 Requires:   python%{pyver}-babel >= 2.3.4
@@ -106,8 +108,6 @@ This package contains the tacker client test files.
 Summary:    OpenStack tacker client documentation
 
 BuildRequires: python%{pyver}-sphinx
-BuildRequires: python%{pyver}-osc-lib
-BuildRequires: python%{pyver}-ddt
 BuildRequires: python%{pyver}-openstackdocstheme
 
 %description -n python-%{sclient}-doc
