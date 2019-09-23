@@ -18,8 +18,8 @@
 %global with_doc 1
 
 Name:       %{client}
-Version:    XXX
-Release:    XXX
+Version:    0.16.0
+Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
 URL:        http://launchpad.net/%{client}/
@@ -179,3 +179,6 @@ PYTHON=%{pyver_bin} stestr-%{pyver} --test-path $OS_TEST_PATH run
 %endif
 
 %changelog
+* Mon Sep 23 2019 RDO <dev@lists.rdoproject.org> 0.16.0-1
+- Update to 0.16.0
+
