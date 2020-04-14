@@ -33,9 +33,7 @@ BuildRequires:  git
 %package -n python%{pyver}-%{sclient}
 Summary:    OpenStack tacker client
 %{?python_provide:%python_provide python%{pyver}-%{sclient}}
-%if %{pyver} == 3
 Obsoletes: python2-%{sclient} < %{version}-%{release}
-%endif
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-mock
@@ -64,18 +62,13 @@ Requires:   python%{pyver}-keystoneclient >= 1:3.8.0
 Requires:   python%{pyver}-oslo-i18n >= 3.15.3
 Requires:   python%{pyver}-oslo-log >= 3.36.0
 Requires:   python%{pyver}-oslo-serialization >= 2.18.0
-Requires:   python%{pyver}-oslo-utils >= 3.33.0
+Requires:   python%{pyver}-oslo-utils >= 3.40.0
 Requires:   python%{pyver}-requests >= 2.14.2
 Requires:   python%{pyver}-six >= 1.10.0
 Requires:   python%{pyver}-stevedore >= 1.20.0
 Requires:   python%{pyver}-osc-lib >= 1.8.0
 Requires:   python%{pyver}-netaddr >= 0.7.18
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:   python-simplejson >= 3.5.1
-%else
 Requires:   python%{pyver}-simplejson >= 3.5.1
-%endif
 
 %description -n python%{pyver}-%{sclient}
 OpenStack tacker client
