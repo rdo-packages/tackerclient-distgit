@@ -7,8 +7,8 @@
 %global with_doc 1
 
 Name:       %{client}
-Version:    XXX
-Release:    XXX
+Version:    1.1.0
+Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
 URL:        http://launchpad.net/%{client}/
@@ -161,3 +161,6 @@ PYTHON=%{__python3} stestr --test-path $OS_TEST_PATH run
 %endif
 
 %changelog
+* Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 1.1.0-1
+- Update to 1.1.0
+
