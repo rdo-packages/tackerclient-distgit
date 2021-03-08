@@ -66,7 +66,6 @@ Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-utils >= 3.40.0
 Requires:   python3-requests >= 2.14.2
-Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
 Requires:   python3-osc-lib >= 1.8.0
 Requires:   python3-netaddr >= 0.7.18
