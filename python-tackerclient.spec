@@ -180,3 +180,4 @@ PYTHON=%{__python3} stestr --test-path $OS_TEST_PATH run
 * Tue Mar 16 2021 RDO <dev@lists.rdoproject.org> 1.6.0-1
 - Update to 1.6.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/python-tackerclient/commit/4e6dc4c0310f02e3b71941df676674b138081890
