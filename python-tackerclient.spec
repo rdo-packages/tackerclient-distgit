@@ -21,6 +21,7 @@ Source0:    http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version
 Source101:        http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
+Patch0001:        0001-Skip-test_take_action_with_filter-unit-test.patch
 
 BuildArch:  noarch
 
@@ -118,7 +119,7 @@ OpenStack tacker client.
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{client}-%{upstream_version} -S git
+%autosetup -n %{client}-%{upstream_version} -S git -p1
 
 # Fix rpmlint warning for CRLF line termination
 sed -i 's/\r$//' ./doc/source/cli/vnf_package_commands.rst ./doc/source/cli/commands.rst

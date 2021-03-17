@@ -1,0 +1,32 @@
+From a412688917f00048aa9407222f5df0baf51983d6 Mon Sep 17 00:00:00 2001
+From: Joel Capitao <jcapitao@redhat.com>
+Date: Wed, 17 Mar 2021 16:00:27 +0100
+Subject: [PATCH] Skip test_take_action_with_filter unit test
+
+---
+ tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py b/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+index cc97288..4ac70ec 100644
+--- a/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
++++ b/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+@@ -13,6 +13,7 @@
+ from io import StringIO
+ import os
+ import sys
++import unittest
+ 
+ from oslo_utils.fixture import uuidsentinel
+ from unittest import mock
+@@ -368,6 +369,7 @@ class TestListVnfLcmOp(TestVnfLcm):
+                               actual_columns)
+         self.assertItemsEqual(expected_data, list(data))
+ 
++    @unittest.skip(reason="Skip flaky test until it's fixed upstream https://bugs.launchpad.net/python-tackerclient/+bug/1919350")
+     def test_take_action_with_filter(self):
+         parsed_args = self.check_parser(
+             self.list_vnflcm_op_occ,
+-- 
+2.26.2
+
