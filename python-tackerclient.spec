@@ -124,6 +124,10 @@ OpenStack tacker client.
 # Fix rpmlint warning for CRLF line termination
 sed -i 's/\r$//' ./doc/source/cli/vnf_package_commands.rst ./doc/source/cli/commands.rst
 
+# Use assertCountEqual instead of assertItemsEqual until
+# https://review.opendev.org/c/openstack/python-tackerclient/+/791095 is in next tag release
+sed -i 's/assertItemsEqual/assertCountEqual/g' tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+
 # Let's handle dependencies ourseleves
 rm -f *requirements.txt
 
