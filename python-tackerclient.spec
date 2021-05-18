@@ -21,7 +21,6 @@ Source0:    http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version
 Source101:        http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
-Patch0001:        0001-Skip-test_take_action_with_filter-unit-test.patch
 
 BuildArch:  noarch
 
@@ -123,6 +122,14 @@ OpenStack tacker client.
 
 # Fix rpmlint warning for CRLF line termination
 sed -i 's/\r$//' ./doc/source/cli/vnf_package_commands.rst ./doc/source/cli/commands.rst
+
+# Use assertCountEqual instead of assertItemsEqual until
+# https://review.opendev.org/c/openstack/python-tackerclient/+/791095 is in next tag release
+sed -i 's/assertItemsEqual/assertCountEqual/g' tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+
+# Skip flaky test test_take_action_with_filter
+sed -i '/^import sys/a import unittest' tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+sed -i '/test_take_action_with_filter/i \    @unittest.skip(reason="Skip flaky test until its fixed upstream lp#1919350")' tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
 
 # Let's handle dependencies ourseleves
 rm -f *requirements.txt
