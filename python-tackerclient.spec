@@ -7,7 +7,7 @@
 %global with_doc 1
 
 Name:       %{client}
-Version:    1.1.0
+Version:    1.1.1
 Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    ASL 2.0
@@ -161,6 +161,9 @@ PYTHON=%{__python3} stestr --test-path $OS_TEST_PATH run
 %endif
 
 %changelog
+* Fri Jul 30 2021 RDO <dev@lists.rdoproject.org> 1.1.1-1
+- Update to 1.1.1
+
 * Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 1.1.0-1
 - Update to 1.1.0
 
