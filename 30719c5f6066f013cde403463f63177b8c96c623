@@ -1,0 +1,8 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 30 Jul 2021 07:04:11 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/tackerclient-distgit/+/34762
+Project: openstack/tackerclient-distgit
+Branch: refs/heads/ussuri-rdo
