@@ -16,6 +16,7 @@ License:    ASL 2.0
 URL:        http://launchpad.net/%{client}/
 
 Source0:    http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz
+Patch0001:  0001-Use-assertCountEqual-instead-of-assertItemsEqual.patch
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz.asc
