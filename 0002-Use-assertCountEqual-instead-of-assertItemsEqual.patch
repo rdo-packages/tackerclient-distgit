@@ -1,0 +1,54 @@
+From c584a8e9190c6ce3c2e5e1a1bdc559acbdb75ddf Mon Sep 17 00:00:00 2001
+From: yatinkarel <ykarel@redhat.com>
+Date: Thu, 13 May 2021 11:26:53 +0530
+Subject: [PATCH] Use assertCountEqual instead of assertItemsEqual
+
+The assertItemsEqual method has been removed in Python 3.3 [1] but
+it was kept alive by unittest2, imported by testtools. For better
+compatibility, change to assertCountEqual.
+
+[1] https://bugs.python.org/issue17866
+
+Change-Id: Iea76915f25eb2e505750d509bdd06758afe324de
+(cherry picked from commit b5603cc45cb42d6406d8227b18ac92aac39afccc)
+---
+ tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py b/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+index 4ac70ec..eda506d 100644
+--- a/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
++++ b/tackerclient/tests/unit/osc/v1/test_vnflcm_op_occs.py
+@@ -365,9 +365,9 @@ class TestListVnfLcmOp(TestVnfLcm):
+             expected_data.append(vnflcm_op_occs_fakes.get_vnflcm_op_occ_data(
+                 vnflcm_op_occ_obj, columns=columns))
+ 
+-        self.assertItemsEqual(_get_columns_vnflcm_op_occs(action='list'),
++        self.assertCountEqual(_get_columns_vnflcm_op_occs(action='list'),
+                               actual_columns)
+-        self.assertItemsEqual(expected_data, list(data))
++        self.assertCountEqual(expected_data, list(data))
+ 
+     @unittest.skip(reason="Skip flaky test until it's fixed upstream https://bugs.launchpad.net/python-tackerclient/+bug/1919350")
+     def test_take_action_with_filter(self):
+@@ -392,7 +392,7 @@ class TestListVnfLcmOp(TestVnfLcm):
+             expected_data.append(vnflcm_op_occs_fakes.get_vnflcm_op_occ_data(
+                 vnflcm_op_occ_obj, columns=columns))
+ 
+-        self.assertItemsEqual(_get_columns_vnflcm_op_occs(action='list'),
++        self.assertCountEqual(_get_columns_vnflcm_op_occs(action='list'),
+                               actual_columns)
+         self.assertListItemsEqual(expected_data, list(data))
+ 
+@@ -459,7 +459,7 @@ class TestShowVnfLcmOp(TestVnfLcm):
+ 
+         columns, data = (self.show_vnf_lcm_op_occs.take_action(parsed_args))
+ 
+-        self.assertItemsEqual(_get_columns_vnflcm_op_occs(),
++        self.assertCountEqual(_get_columns_vnflcm_op_occs(),
+                               columns)
+ 
+     def test_take_action_vnf_lcm_op_occ_id_not_found(self):
+-- 
+2.33.1
+

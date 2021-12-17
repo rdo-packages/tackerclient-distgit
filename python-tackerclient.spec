@@ -22,6 +22,7 @@ Source101:        http://tarballs.openstack.org/%{client}/%{client}-%{upstream_v
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 Patch0001:        0001-Skip-test_take_action_with_filter-unit-test.patch
+Patch0002:        0002-Use-assertCountEqual-instead-of-assertItemsEqual.patch
 
 BuildArch:  noarch
 
