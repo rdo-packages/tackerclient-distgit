@@ -61,7 +61,6 @@ Requires:  python3-pbr
 Requires:  python3-setuptools
 Requires:  python3-subunit
 Requires:  python3-testtools
-Requires:  python3-mock
 Requires:  python3-stestr
 
 %description -n python3-%{sclient}-tests-unit
