@@ -2,6 +2,8 @@
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources tackerclient}
+%{!?dlrn: %global tarsources tackerclient}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
 # Exclude sphinx from BRs if docs are disabled
@@ -21,10 +23,10 @@ Summary:    OpenStack Tacker client
 License:    Apache-2.0
 URL:        http://launchpad.net/%{client}/
 
-Source0:    http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz
+Source0:    http://tarballs.openstack.org/%{client}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        http://tarballs.openstack.org/%{client}/%{client}-%{upstream_version}.tar.gz.asc
+Source101:        http://tarballs.openstack.org/%{client}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -87,7 +89,7 @@ OpenStack tacker client.
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{client}-%{upstream_version} -S git -p1
+%autosetup -n %{tarsources}-%{upstream_version} -S git -p1
 
 # Fix rpmlint warning for CRLF line termination
 sed -i 's/\r$//' ./doc/source/cli/vnf_package_commands.rst ./doc/source/cli/commands.rst
