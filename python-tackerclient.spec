@@ -15,8 +15,8 @@
 %global with_doc 1
 
 Name:       %{client}
-Version:    XXX
-Release:    XXX
+Version:    2.3.0
+Release:    1%{?dist}
 Summary:    OpenStack Tacker client
 License:    Apache-2.0
 URL:        http://launchpad.net/%{client}/
@@ -172,3 +172,6 @@ ln -s %{executable} %{buildroot}%{_bindir}/%{executable}-3
 %endif
 
 %changelog
+* Tue Mar 18 2025 RDO <dev@lists.rdoproject.org> 2.3.0-1
+- Update to 2.3.0
+
